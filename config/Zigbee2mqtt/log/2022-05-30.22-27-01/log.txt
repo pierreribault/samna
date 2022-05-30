@@ -1,0 +1,26 @@
+info  2022-05-30 22:27:03: Logging to console and directory: '/app/data/log/2022-05-30.22-27-01' filename: log.txt
+info  2022-05-30 22:27:03: Starting Zigbee2MQTT version 1.25.1 (commit #3f6a137)
+info  2022-05-30 22:27:03: Starting zigbee-herdsman (0.14.27)
+info  2022-05-30 22:27:04: zigbee-herdsman started (resumed)
+info  2022-05-30 22:27:04: Coordinator firmware version: '{"meta":{"maintrel":1,"majorrel":2,"minorrel":7,"product":1,"revision":20210708,"transportrev":2},"type":"zStack3x0"}'
+info  2022-05-30 22:27:04: Currently 0 devices are joined:
+warn  2022-05-30 22:27:04: `permit_join` set to  `true` in configuration.yaml.
+warn  2022-05-30 22:27:04: Allowing new devices to join.
+warn  2022-05-30 22:27:04: Set `permit_join` to `false` once you joined all devices.
+info  2022-05-30 22:27:04: Zigbee: allowing new devices to join.
+info  2022-05-30 22:27:04: Connecting to MQTT server at mqtt://localhost
+info  2022-05-30 22:27:04: Connected to MQTT server
+info  2022-05-30 22:27:04: MQTT publish: topic 'zigbee2mqtt/bridge/state', payload '{"state":"online"}'
+info  2022-05-30 22:27:07: Device '0x00124b0026b712b5' joined
+info  2022-05-30 22:27:07: MQTT publish: topic 'zigbee2mqtt/bridge/event', payload '{"data":{"friendly_name":"0x00124b0026b712b5","ieee_address":"0x00124b0026b712b5"},"type":"device_joined"}'
+info  2022-05-30 22:27:07: Starting interview of '0x00124b0026b712b5'
+info  2022-05-30 22:27:07: MQTT publish: topic 'zigbee2mqtt/bridge/event', payload '{"data":{"friendly_name":"0x00124b0026b712b5","ieee_address":"0x00124b0026b712b5","status":"started"},"type":"device_interview"}'
+info  2022-05-30 22:27:07: MQTT publish: topic 'zigbee2mqtt/bridge/event', payload '{"data":{"friendly_name":"0x00124b0026b712b5","ieee_address":"0x00124b0026b712b5"},"type":"device_announce"}'
+info  2022-05-30 22:27:07: Successfully interviewed '0x00124b0026b712b5', device has successfully been paired
+info  2022-05-30 22:27:07: Device '0x00124b0026b712b5' is supported, identified as: SONOFF Zigbee two way smart switch (ZBMINI)
+info  2022-05-30 22:27:07: MQTT publish: topic 'zigbee2mqtt/bridge/event', payload '{"data":{"definition":{"description":"Zigbee two way smart switch","exposes":[{"features":[{"access":7,"description":"On/off state of the switch","name":"state","property":"state","type":"binary","value_off":"OFF","value_on":"ON","value_toggle":"TOGGLE"}],"type":"switch"},{"access":1,"description":"Link quality (signal strength)","name":"linkquality","property":"linkquality","type":"numeric","unit":"lqi","value_max":255,"value_min":0}],"model":"ZBMINI","options":[],"supports_ota":false,"vendor":"SONOFF"},"friendly_name":"0x00124b0026b712b5","ieee_address":"0x00124b0026b712b5","status":"successful","supported":true},"type":"device_interview"}'
+info  2022-05-30 22:27:07: Configuring '0x00124b0026b712b5'
+info  2022-05-30 22:27:07: Successfully configured '0x00124b0026b712b5'
+info  2022-05-30 22:29:19: MQTT publish: topic 'zigbee2mqtt/bridge/state', payload '{"state":"offline"}'
+info  2022-05-30 22:29:19: Disconnecting from MQTT server
+info  2022-05-30 22:29:19: Stopping zigbee-herdsman...

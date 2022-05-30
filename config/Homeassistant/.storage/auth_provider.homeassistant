@@ -1,0 +1,13 @@
+{
+    "version": 1,
+    "minor_version": 1,
+    "key": "auth_provider.homeassistant",
+    "data": {
+        "users": [
+            {
+                "username": "samna",
+                "password": "JDJiJDEyJHdsVU5mbkdTVHFPM0tHOS40OHhweWVuSmQ4ZEU2RHFRVWJ2SjJSV1JyUE1udjdkY1pqNTk2"
+            }
+        ]
+    }
+}

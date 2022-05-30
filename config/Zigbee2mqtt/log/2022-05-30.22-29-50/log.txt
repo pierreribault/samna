@@ -1,0 +1,24 @@
+info  2022-05-30 22:29:52: Logging to console and directory: '/app/data/log/2022-05-30.22-29-50' filename: log.txt
+info  2022-05-30 22:29:53: Starting Zigbee2MQTT version 1.25.1 (commit #3f6a137)
+info  2022-05-30 22:29:53: Starting zigbee-herdsman (0.14.27)
+info  2022-05-30 22:29:56: zigbee-herdsman started (resumed)
+info  2022-05-30 22:29:56: Coordinator firmware version: '{"meta":{"maintrel":1,"majorrel":2,"minorrel":7,"product":1,"revision":20210708,"transportrev":2},"type":"zStack3x0"}'
+info  2022-05-30 22:29:56: Currently 1 devices are joined:
+info  2022-05-30 22:29:56: 0x00124b0026b712b5 (0x00124b0026b712b5): ZBMINI - SONOFF Zigbee two way smart switch (Router)
+warn  2022-05-30 22:29:56: `permit_join` set to  `true` in configuration.yaml.
+warn  2022-05-30 22:29:56: Allowing new devices to join.
+warn  2022-05-30 22:29:56: Set `permit_join` to `false` once you joined all devices.
+info  2022-05-30 22:29:56: Zigbee: allowing new devices to join.
+info  2022-05-30 22:29:56: Connecting to MQTT server at mqtt://localhost
+info  2022-05-30 22:29:56: Connected to MQTT server
+info  2022-05-30 22:29:56: MQTT publish: topic 'zigbee2mqtt/bridge/state', payload '{"state":"online"}'
+error 2022-05-30 22:29:56: Failed to call 'Bridge' 'start' (TypeError: Cannot read properties of undefined (reading 'ieeeAddr')
+    at Bridge.publishInfo (/app/lib/extension/bridge.ts:571:81)
+    at Bridge.start (/app/lib/extension/bridge.ts:104:20)
+    at Controller.callExtensions (/app/lib/controller.ts:316:17)
+    at Controller.start (/app/lib/controller.ts:153:9)
+    at start (/app/index.js:110:5))
+info  2022-05-30 22:31:00: MQTT publish: topic 'zigbee2mqtt/bridge/state', payload '{"state":"offline"}'
+info  2022-05-30 22:31:00: Disconnecting from MQTT server
+info  2022-05-30 22:31:00: Stopping zigbee-herdsman...
+error 2022-05-30 22:31:09: Failed to stop Zigbee2MQTT

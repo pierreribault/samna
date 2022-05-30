@@ -5,15 +5,12 @@ services:
     image: homeassistant/home-assistant:stable
     container_name: homeassistant
     volumes:
-      - ./config/homeassistant:/config
+      - ./config/Homeassistant:/config
       - /etc/localtime:/etc/localtime:ro
     environment:
       - TZ=Europe/Paris
-    ports:
-      - 8123:8123
     restart: unless-stopped
-    networks:
-      - my-network
+    network_mode: host
   
   zigbee2mqtt:
     image: koenkk/zigbee2mqtt
@@ -21,32 +18,19 @@ services:
     container_name: zigbee2mqtt
     environment:
       - TZ=Europe/Paris
-    ports:
-      - 8080:8080
     volumes:
-      - ./config/zigbee2mqtt:/app/data
+      - ./config/Zigbee2mqtt:/app/data
     restart: unless-stopped
     devices:
-      - ./dev/ttyUSB0:/dev/ttyUSB0
-    networks:
-      - my-network
+      - ./dev/ttyUSB0:/dev/ttyACM0
+    network_mode: host
 
   mqtt:
     image: eclipse-mosquitto:latest
     container_name: mqtt
     environment:
       - TZ=Europe/Paris
-    ports:
-      - 1883:1883
-      - 9001:9001
     volumes:
-      - ./config/mosquitto:/mosquitto/config
+      - ./config/Mosquitto:/mosquitto/config
     restart: unless-stopped
-    networks:
-      - my-network
-
-
-networks:
-  my-network:
-    driver: bridge
-
+    network_mode: host

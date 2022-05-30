@@ -1,0 +1,31 @@
+info  2022-05-30 22:31:22: Logging to console and directory: '/app/data/log/2022-05-30.22-31-20' filename: log.txt
+info  2022-05-30 22:31:22: Starting Zigbee2MQTT version 1.25.1 (commit #3f6a137)
+info  2022-05-30 22:31:22: Starting zigbee-herdsman (0.14.27)
+info  2022-05-30 22:31:26: zigbee-herdsman started (resumed)
+info  2022-05-30 22:31:26: Coordinator firmware version: '{"meta":{"maintrel":1,"majorrel":2,"minorrel":7,"product":1,"revision":20210708,"transportrev":2},"type":"zStack3x0"}'
+info  2022-05-30 22:31:26: Currently 1 devices are joined:
+info  2022-05-30 22:31:26: 0x00124b0026b712b5 (0x00124b0026b712b5): ZBMINI - SONOFF Zigbee two way smart switch (Router)
+warn  2022-05-30 22:31:26: `permit_join` set to  `true` in configuration.yaml.
+warn  2022-05-30 22:31:26: Allowing new devices to join.
+warn  2022-05-30 22:31:26: Set `permit_join` to `false` once you joined all devices.
+info  2022-05-30 22:31:26: Zigbee: allowing new devices to join.
+info  2022-05-30 22:31:26: Connecting to MQTT server at mqtt://localhost
+info  2022-05-30 22:31:26: Connected to MQTT server
+info  2022-05-30 22:31:26: MQTT publish: topic 'zigbee2mqtt/bridge/state', payload '{"state":"online"}'
+error 2022-05-30 22:31:27: Failed to call 'Bridge' 'start' (TypeError: Cannot read properties of undefined (reading 'ieeeAddr')
+    at Bridge.publishInfo (/app/lib/extension/bridge.ts:571:81)
+    at Bridge.start (/app/lib/extension/bridge.ts:104:20)
+    at Controller.callExtensions (/app/lib/controller.ts:316:17)
+    at Controller.start (/app/lib/controller.ts:153:9)
+    at start (/app/index.js:110:5))
+info  2022-05-30 22:31:27: MQTT publish: topic 'homeassistant/switch/0x00124b0026b712b5/switch/config', payload '{"availability":[{"topic":"zigbee2mqtt/bridge/state","value_template":"{{ value_json.state }}"}],"command_topic":"zigbee2mqtt/0x00124b0026b712b5/set","device":{"identifiers":["zigbee2mqtt_0x00124b0026b712b5"],"manufacturer":"SONOFF","model":"Zigbee two way smart switch (ZBMINI)","name":"0x00124b0026b712b5","sw_version":"2.0.0"},"name":"0x00124b0026b712b5","payload_off":"OFF","payload_on":"ON","state_topic":"zigbee2mqtt/0x00124b0026b712b5","unique_id":"0x00124b0026b712b5_switch_zigbee2mqtt","value_template":"{{ value_json.state }}"}'
+info  2022-05-30 22:31:27: MQTT publish: topic 'homeassistant/sensor/0x00124b0026b712b5/linkquality/config', payload '{"availability":[{"topic":"zigbee2mqtt/bridge/state","value_template":"{{ value_json.state }}"}],"device":{"identifiers":["zigbee2mqtt_0x00124b0026b712b5"],"manufacturer":"SONOFF","model":"Zigbee two way smart switch (ZBMINI)","name":"0x00124b0026b712b5","sw_version":"2.0.0"},"enabled_by_default":false,"entity_category":"diagnostic","icon":"mdi:signal","name":"0x00124b0026b712b5 linkquality","state_class":"measurement","state_topic":"zigbee2mqtt/0x00124b0026b712b5","unique_id":"0x00124b0026b712b5_linkquality_zigbee2mqtt","unit_of_measurement":"lqi","value_template":"{{ value_json.linkquality }}"}'
+info  2022-05-30 22:31:27: MQTT publish: topic 'zigbee2mqtt/bridge/state', payload '{"state":"online"}'
+info  2022-05-30 22:32:32: MQTT publish: topic 'zigbee2mqtt/0x00124b0026b712b5', payload '{"linkquality":54,"state":"OFF"}'
+info  2022-05-30 22:33:08: MQTT publish: topic 'zigbee2mqtt/0x00124b0026b712b5', payload '{"linkquality":117,"state":"ON"}'
+info  2022-05-30 22:33:08: MQTT publish: topic 'zigbee2mqtt/0x00124b0026b712b5', payload '{"linkquality":117,"state":"ON"}'
+info  2022-05-30 22:33:13: MQTT publish: topic 'zigbee2mqtt/0x00124b0026b712b5', payload '{"linkquality":123,"state":"OFF"}'
+info  2022-05-30 22:33:13: MQTT publish: topic 'zigbee2mqtt/0x00124b0026b712b5', payload '{"linkquality":114,"state":"OFF"}'
+info  2022-05-30 22:33:16: MQTT publish: topic 'zigbee2mqtt/0x00124b0026b712b5', payload '{"linkquality":114,"state":"OFF"}'
+info  2022-05-30 22:33:19: MQTT publish: topic 'zigbee2mqtt/0x00124b0026b712b5', payload '{"linkquality":123,"state":"ON"}'
+info  2022-05-30 22:33:19: MQTT publish: topic 'zigbee2mqtt/0x00124b0026b712b5', payload '{"linkquality":123,"state":"ON"}'

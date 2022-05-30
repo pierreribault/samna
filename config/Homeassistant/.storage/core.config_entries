@@ -1,0 +1,67 @@
+{
+    "version": 1,
+    "minor_version": 1,
+    "key": "core.config_entries",
+    "data": {
+        "entries": [
+            {
+                "entry_id": "ae971101cf84ade316e25359863a2692",
+                "version": 1,
+                "domain": "sun",
+                "title": "Sun",
+                "data": {},
+                "options": {},
+                "pref_disable_new_entities": false,
+                "pref_disable_polling": false,
+                "source": "import",
+                "unique_id": null,
+                "disabled_by": null
+            },
+            {
+                "entry_id": "1e481e869bf8fc276fa6d0f2fcf5a060",
+                "version": 1,
+                "domain": "radio_browser",
+                "title": "Radio Browser",
+                "data": {},
+                "options": {},
+                "pref_disable_new_entities": false,
+                "pref_disable_polling": false,
+                "source": "onboarding",
+                "unique_id": null,
+                "disabled_by": null
+            },
+            {
+                "entry_id": "c771d5f6a5e8f0bc3c1964dd81dfdbfe",
+                "version": 1,
+                "domain": "dlna_dms",
+                "title": "DESKTOP-V3DTEAN: samna6@hotmail.fr:",
+                "data": {
+                    "url": "http://[fe80::865:9ba6:7ea4:16b8%2]:2869/upnphost/udhisapi.dll?content=uuid:0e7d8260-0556-4d8b-8134-5eb7d7b4b3d0"
+                },
+                "options": {},
+                "pref_disable_new_entities": false,
+                "pref_disable_polling": false,
+                "source": "ignore",
+                "unique_id": "uuid:0e7d8260-0556-4d8b-8134-5eb7d7b4b3d0::urn:schemas-upnp-org:device:MediaServer:1",
+                "disabled_by": null
+            },
+            {
+                "entry_id": "3e57f9ad5b5ab1fd473c7d32bc687151",
+                "version": 1,
+                "domain": "mqtt",
+                "title": "localhost",
+                "data": {
+                    "broker": "localhost",
+                    "port": 1883,
+                    "discovery": true
+                },
+                "options": {},
+                "pref_disable_new_entities": false,
+                "pref_disable_polling": false,
+                "source": "user",
+                "unique_id": null,
+                "disabled_by": null
+            }
+        ]
+    }
+}

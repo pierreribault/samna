@@ -1,0 +1,77 @@
+{
+    "version": 1,
+    "minor_version": 6,
+    "key": "core.entity_registry",
+    "data": {
+        "entities": [
+            {
+                "area_id": null,
+                "capabilities": null,
+                "config_entry_id": null,
+                "device_class": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_category": null,
+                "entity_id": "person.samna",
+                "hidden_by": null,
+                "icon": null,
+                "id": "91eefbec79995396188e92a63c529b9b",
+                "name": null,
+                "options": {},
+                "original_device_class": null,
+                "original_icon": null,
+                "original_name": "samna",
+                "platform": "person",
+                "supported_features": 0,
+                "unique_id": "samna",
+                "unit_of_measurement": null
+            },
+            {
+                "area_id": null,
+                "capabilities": null,
+                "config_entry_id": "3e57f9ad5b5ab1fd473c7d32bc687151",
+                "device_class": null,
+                "device_id": "b522568053176eef2dd16527a9afef32",
+                "disabled_by": null,
+                "entity_category": null,
+                "entity_id": "switch.0x00124b0026b712b5",
+                "hidden_by": null,
+                "icon": "music",
+                "id": "3aeea6b417dad5bb29106f485a65e9c9",
+                "name": "Enceinte",
+                "options": {},
+                "original_device_class": null,
+                "original_icon": null,
+                "original_name": "0x00124b0026b712b5",
+                "platform": "mqtt",
+                "supported_features": 0,
+                "unique_id": "0x00124b0026b712b5_switch_zigbee2mqtt",
+                "unit_of_measurement": null
+            },
+            {
+                "area_id": null,
+                "capabilities": {
+                    "state_class": "measurement"
+                },
+                "config_entry_id": "3e57f9ad5b5ab1fd473c7d32bc687151",
+                "device_class": null,
+                "device_id": "b522568053176eef2dd16527a9afef32",
+                "disabled_by": "integration",
+                "entity_category": "diagnostic",
+                "entity_id": "sensor.0x00124b0026b712b5_linkquality",
+                "hidden_by": null,
+                "icon": null,
+                "id": "69946e157cdcdb17081611c730e1f114",
+                "name": null,
+                "options": {},
+                "original_device_class": null,
+                "original_icon": "mdi:signal",
+                "original_name": "0x00124b0026b712b5 linkquality",
+                "platform": "mqtt",
+                "supported_features": 0,
+                "unique_id": "0x00124b0026b712b5_linkquality_zigbee2mqtt",
+                "unit_of_measurement": "lqi"
+            }
+        ]
+    }
+}

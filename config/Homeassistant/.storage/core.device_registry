@@ -1,0 +1,34 @@
+{
+    "version": 1,
+    "minor_version": 3,
+    "key": "core.device_registry",
+    "data": {
+        "devices": [
+            {
+                "config_entries": [
+                    "3e57f9ad5b5ab1fd473c7d32bc687151"
+                ],
+                "connections": [],
+                "identifiers": [
+                    [
+                        "mqtt",
+                        "zigbee2mqtt_0x00124b0026b712b5"
+                    ]
+                ],
+                "manufacturer": "SONOFF",
+                "model": "Zigbee two way smart switch (ZBMINI)",
+                "name": "0x00124b0026b712b5",
+                "sw_version": "2.0.0",
+                "hw_version": null,
+                "entry_type": null,
+                "id": "b522568053176eef2dd16527a9afef32",
+                "via_device_id": null,
+                "area_id": null,
+                "name_by_user": null,
+                "disabled_by": null,
+                "configuration_url": null
+            }
+        ],
+        "deleted_devices": []
+    }
+}

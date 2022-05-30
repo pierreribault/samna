@@ -1,0 +1,15 @@
+info  2022-05-30 22:26:17: Logging to console and directory: '/app/data/log/2022-05-30.22-26-16' filename: log.txt
+info  2022-05-30 22:26:17: Starting Zigbee2MQTT version 1.25.1 (commit #3f6a137)
+info  2022-05-30 22:26:17: Starting zigbee-herdsman (0.14.27)
+info  2022-05-30 22:26:18: zigbee-herdsman started (resumed)
+info  2022-05-30 22:26:18: Coordinator firmware version: '{"meta":{"maintrel":1,"majorrel":2,"minorrel":7,"product":1,"revision":20210708,"transportrev":2},"type":"zStack3x0"}'
+info  2022-05-30 22:26:18: Currently 0 devices are joined:
+warn  2022-05-30 22:26:18: `permit_join` set to  `true` in configuration.yaml.
+warn  2022-05-30 22:26:18: Allowing new devices to join.
+warn  2022-05-30 22:26:18: Set `permit_join` to `false` once you joined all devices.
+info  2022-05-30 22:26:18: Zigbee: allowing new devices to join.
+info  2022-05-30 22:26:19: Connecting to MQTT server at mqtt://localhost
+error 2022-05-30 22:26:19: MQTT failed to connect: connect ECONNREFUSED 127.0.0.1:1883
+error 2022-05-30 22:26:19: Exiting...
+info  2022-05-30 22:26:19: Stopping zigbee-herdsman...
+info  2022-05-30 22:26:28: Stopped zigbee-herdsman
