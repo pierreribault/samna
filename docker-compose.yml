@@ -82,7 +82,7 @@ services:
       - TZ=Europe/Paris
     volumes:
       - ${CONFIG_PATH}/sonarr:/config
-      - ${MEDIA_PATH}/Séries/:/tv
+      - ${DATA_PATH}/Séries/:/tv
       - ${DATA_PATH}/downloads:/downloads
     networks:
       - my-network
@@ -103,7 +103,7 @@ services:
       - TZ=Europe/Paris
     volumes:
       - ${CONFIG_PATH}/radarr:/config
-      - ${MEDIA_PATH}/Films/:/movies
+      - ${DATA_PATH}/Films/:/movies
       - ${DATA_PATH}/downloads:/downloads
     networks:
       - my-network
