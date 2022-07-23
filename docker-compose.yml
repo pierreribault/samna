@@ -2,9 +2,35 @@
 version: "3.6"
 services:
 
-  transmission:
+  transmission-sonarr:
       image: linuxserver/transmission:latest
-      container_name: "transmission"
+      container_name: "transmission-sonarr"
+      restart: unless-stopped
+      networks:
+        - my-network
+      ports:
+        - 9092:9091
+        - 51414:51413
+        - 51414:51413/udp
+      dns:
+        - 1.1.1.1
+        - 8.8.8.8
+      volumes:
+        - /etc/localtime:/etc/localtime:ro
+        - ${CONFIG_PATH}/transmission-sonarr:/config
+        - ${DATA_PATH}:/data
+      environment:
+        - PGID=${PGID}
+        - PUID=${PUID}
+        - TRANSMISSION_RATIO_LIMIT_ENABLED=true
+        - TRANSMISSION_DOWNLOAD_DIR=/data/complete
+        - GLOBAL_APPLY_PERMISSIONS=false
+        - TRANSMISSION_HOME=/config/transmission-home
+        - TZ=Europe/Paris
+
+  transmission-radarr:
+      image: linuxserver/transmission:latest
+      container_name: "transmission-radarr"
       restart: unless-stopped
       networks:
         - my-network
@@ -17,16 +43,16 @@ services:
         - 8.8.8.8
       volumes:
         - /etc/localtime:/etc/localtime:ro
-        - ${CONFIG_PATH}/transmission:/config
+        - ${CONFIG_PATH}/transmission-radarr:/config
         - ${DATA_PATH}:/data
       environment:
-            - PGID=${PGID}
-            - PUID=${PUID}
-            - TRANSMISSION_RATIO_LIMIT_ENABLED=true
-            - TRANSMISSION_DOWNLOAD_DIR=/data/complete
-            - GLOBAL_APPLY_PERMISSIONS=false
-            - TRANSMISSION_HOME=/config/transmission-home
-            - TZ=Europe/Paris
+        - PGID=${PGID}
+        - PUID=${PUID}
+        - TRANSMISSION_RATIO_LIMIT_ENABLED=true
+        - TRANSMISSION_DOWNLOAD_DIR=/data/complete
+        - GLOBAL_APPLY_PERMISSIONS=false
+        - TRANSMISSION_HOME=/config/transmission-home
+        - TZ=Europe/Paris
 
   prowlarr:
     image: ghcr.io/linuxserver/prowlarr:develop
@@ -36,7 +62,7 @@ services:
       - PGID=${PGID}0
       - TZ=Europe/Paris
     volumes:
-      - ${CONFIG_PATH}/Prowlarr:/config
+      - ${CONFIG_PATH}/prowlarr:/config
     networks:
       - my-network
     dns:
@@ -55,10 +81,9 @@ services:
       - UMASK_SET=022
       - TZ=Europe/Paris
     volumes:
-      - ${CONFIG_PATH}/Sonarr:/config
-      - ${MEDIA_PATH}/TV/:/tv
-      - ${DATA_PATH}/complete:/downloads
-      - ${DATA_PATH}:/data
+      - ${CONFIG_PATH}/sonarr:/config
+      - ${MEDIA_PATH}/Séries/:/tv
+      - ${DATA_PATH}/downloads:/downloads
     networks:
       - my-network
     dns:
@@ -77,10 +102,9 @@ services:
       - UMASK_SET=022
       - TZ=Europe/Paris
     volumes:
-      - ${CONFIG_PATH}/Radarr:/config
-      - ${MEDIA_PATH}/Movies/:/movies
-      - ${DATA_PATH}/complete:/downloads
-      - ${DATA_PATH}:/data
+      - ${CONFIG_PATH}/radarr:/config
+      - ${MEDIA_PATH}/Films/:/movies
+      - ${DATA_PATH}/downloads:/downloads
     networks:
       - my-network
     dns:
@@ -89,68 +113,6 @@ services:
     ports:
       - 7878:7878
     restart: unless-stopped
-  
-  samba:
-    image: dperson/samba:latest
-    container_name: samba
-    command: '-s "Mount;/mount" -s "Bobs Volume;/mount;yes;no;no;bob" -u "bob;bobspasswd" -p'
-    volumes:
-      - ${DATA_PATH}:/mount
-    networks:
-      - my-network
-    dns:
-        - 1.1.1.1
-        - 8.8.8.8
-    ports:
-      - 445:445
-      - 139:139
-    restart: unless-stopped
-
-  homeassistant:
-    image: homeassistant/home-assistant:stable
-    container_name: homeassistant
-    volumes:
-      - ${CONFIG_PATH}/Homeassistant:/config
-      - /etc/localtime:/etc/localtime:ro
-    environment:
-      - TZ=Europe/Paris
-    ports:
-      - 8123:8123
-    restart: unless-stopped
-    networks:
-      - my-network
-  
-  zigbee2mqtt:
-    image: koenkk/zigbee2mqtt
-    privileged: true
-    container_name: zigbee2mqtt
-    environment:
-      - TZ=Europe/Paris
-    ports:
-      - 8081:8080
-    volumes:
-      - ${CONFIG_PATH}/Zigbee2mqtt:/app/data
-    restart: unless-stopped
-    devices:
-      - /dev/tty.usbserial-210:/dev/tty.usbserial-210
-    networks:
-      - my-network
-
-  mosquitto:
-    image: eclipse-mosquitto:latest
-    container_name: mosquitto
-    environment:
-      - TZ=Europe/Paris
-    ports:
-      - 1883:1883
-      - 9001:9001
-    volumes:
-      - ${CONFIG_PATH}/Mosquitto:/mosquitto/config
-    restart: unless-stopped
-    networks:
-      - my-network
-
 
 networks:
   my-network:
-
