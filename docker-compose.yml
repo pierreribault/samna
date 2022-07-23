@@ -23,7 +23,7 @@ services:
         - PGID=${PGID}
         - PUID=${PUID}
         - TRANSMISSION_RATIO_LIMIT_ENABLED=true
-        - TRANSMISSION_DOWNLOAD_DIR=/data/complete
+        - TRANSMISSION_DOWNLOAD_DIR=/data/Séries
         - GLOBAL_APPLY_PERMISSIONS=false
         - TRANSMISSION_HOME=/config/transmission-home
         - TZ=Europe/Paris
@@ -49,7 +49,7 @@ services:
         - PGID=${PGID}
         - PUID=${PUID}
         - TRANSMISSION_RATIO_LIMIT_ENABLED=true
-        - TRANSMISSION_DOWNLOAD_DIR=/data/complete
+        - TRANSMISSION_DOWNLOAD_DIR=/data/Films
         - GLOBAL_APPLY_PERMISSIONS=false
         - TRANSMISSION_HOME=/config/transmission-home
         - TZ=Europe/Paris
